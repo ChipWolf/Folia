@@ -2126,7 +2126,7 @@ index f975cb93716e137d973ff2f9011acdbef58859a2..b84bfc9513a13e365f2bd471b3c77058
      // the entire section
      // we just take the max, as we want the smallest shift that satifies these properties
 -    private static final int LOCK_SHIFT = ThreadedTicketLevelPropagator.SECTION_SHIFT;
-+    private static final int LOCK_SHIFT = Math.max(ThreadedTicketLevelPropagator.SECTION_SHIFT, io.papermc.paper.threadedregions.TickRegions.getRegionChunkShift()); // Folia - region threading
++    private static final int LOCK_SHIFT = 4; // Folia - region threading
      public static int getChunkSystemLockShift() {
          return LOCK_SHIFT;
      }
